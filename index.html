@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>FB-13 | توليد حلقة أنمي</title>
+</head>
+<body style="font-family:sans-serif;background:#111;color:#0ff;padding:20px">
+  <h1>FB-13 AI Studio</h1>
+  <p>اضغط الزر لإنشاء حلقة أنمي كاملة:</p>
+  <button onclick="generate()">🎬 توليد الحلقة</button>
+  <div id="result" style="margin-top:20px"></div>
+  <script>
+    async function generate() {
+      const res = await fetch('/api/generate-episode', {
+        method: 'POST',
+        headers: { 'x-api-key': 'fb13_Studio_AI_Power_Key_90210' }
+      });
+      const data = await res.json();
+      document.getElementById('result').innerHTML = data.message + "<br><video controls src='" + data.video_url + "'></video>";
+    }
+  </script>
+</body>
+</html>

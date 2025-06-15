@@ -1,0 +1,13 @@
+{
+  "name": "fb13-fast-anime",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.0.3",
+    "axios": "^1.6.0"
+  }
+}
